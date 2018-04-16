@@ -28,7 +28,6 @@ EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
 // Get JSON data
 treeJSON = d3.json("flare.json", function(error, treeData) {
-
     // Calculate total nodes, max label length
     var totalNodes = 0;
     var maxLabelLength = 0;
@@ -327,16 +326,16 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
                 }
             }];
         }
-        var link = svgGroup.selectAll(".templink").data(data);
+        // var link = svgGroup.selectAll(".templink").data(data);
 
-        link.enter().append("path")
-            .attr("class", "templink")
-            .attr("d", d3.svg.diagonal())
-            .attr('pointer-events', 'none');
+        // link.enter().append("path")
+        //     .attr("class", "templink")
+        //     .attr("d", d3.svg.diagonal())
+        //     .attr('pointer-events', 'none');
 
-        link.attr("d", d3.svg.diagonal());
+        // link.attr("d", d3.svg.diagonal());
 
-        link.exit().remove();
+        // link.exit().remove();
     };
 
     // Function to center node when clicked/dropped so node doesn't get lost
@@ -452,7 +451,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .attr('class', 'ghostCircle')
             .attr("r", 30)
             .attr("opacity", 0.2) // change this to zero to hide the target area
-        .style("fill", "red")
+        .style("fill", "green")
             .attr('pointer-events', 'mouseover')
             .on("mouseover", function(node) {
                 overCircle(node);
