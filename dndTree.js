@@ -470,7 +470,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             })
             .text(function(d) {
                 return d.name;
-            });
+p            });
 
         // Change the circle fill depending on whether it has children and is 
         // collapsed
@@ -478,7 +478,7 @@ treeJSON = d3.json("flare.json", function(error, treeData) {
             .attr("r", 4.5)
             .style("fill", function(d) {
                 return d._children ? "lightsteelblue" : "#fff";
-            });
+            }).on("mouseover", function (d) { console.log("mouseover happened"); });
 
         // Transition nodes to their new position.
         var nodeUpdate = node.transition()
